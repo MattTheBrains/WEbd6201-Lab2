@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBD 6201 Lab 2</title>
+    <link rel="stylesheet" type="text/css" href="./Content/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./Scripts/app.js"></script>
+</head>
+<body>
+<ul class="nav">
+    <li style="float:left;color:white">
+        WEBD6201 - Lesson 2
+    </li>
+    <li>
+        <a class="login" href="login.html">Login/Logout</a>
+    </li>
+    <li>
+        <a class="register" href="register.html">Register</a>
+    </li>
+    <li>
+        <a id="active" class="contact" href="contact.html">Contact Us</a>
+    </li>
+    <li>
+        <a class="about" href="about.html">About Us</a>
+    </li>
+    <li>
+        <a class="services" href="services.html">Services</a>
+    </li>
+    <li>
+        <a class="products" href="products.html">Products</a>
+    </li>
+    <li>
+        <a class="home" href="index.html">Home</a>
+    </li>
+</ul>
+<div class='main-div'>
+    <h1>Contact Us</h1>
+    <table class="contact-us">
+        <form id = "aForm" action = "./index.html" method="post">
+            <tr>
+                <td>
+                    
+                    <label for = "name">Name:</label>
+                </td>
+                <td>
+                    <input type = "text" id = "name" placeholder = "Enter name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label for = "number">Phone Number:</label> 
+            </td>
+            <td>
+                <input type = "text" id = "number" placeholder = "Enter phone number">
+            </td>
+            </tr>
+            <tr>
+                <td>
+                <label for = "email">E-mail:</label>
+            </td>
+            <td>
+                <input type = "email" id = "email" placeholder = "Enter e-mail address">
+            </td>
+            </tr>
+            <tr>
+                <td>
+                <label for = "comments">Any comments?</label>
+            </td>
+            <td>
+                <textarea id = "comments" placeholder = "Enter comments here"  rows="6" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                
+            </td>
+            <td>
+                <button class = "form-button submit" type="button" onclick="setDelay()">Submit</button>
+                <input class = "form-button reset" id = "reset" type = "reset">
+                </td>
+            </tr>
+        </form>
+    </table>
+
+<script>navOnLoad(); fixNav();</script>
+</div>
+</body>
+</html>
