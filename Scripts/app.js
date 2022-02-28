@@ -2,7 +2,7 @@
 WEBD6201 - Lab 2
 Matthew Ware - 100472787
 Irina Nazarova - 10078306
-Date Completed - November 24, 2022
+Date Completed - February 24, 2022
 */
 // CODE FOR LAB 2
 // Insert Name into Nav Bar
