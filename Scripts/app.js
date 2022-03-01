@@ -1,3 +1,12 @@
+class User {
+    constructor(fname, lname, username, email, password){
+        this.fname = fname;
+        this.lname = lname;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+}
 /*
 WEBD6201 - Lab 2
 Matthew Ware - 100472787
@@ -6,13 +15,60 @@ Date Completed - November 24, 2022
 */
 // CODE FOR LAB 2
 // Insert Name into Nav Bar
+var errorString = "";
+
 function insertName(){
     $("<li>" + document.getElementById("username").value + "</li>").insertBefore(".contact");
     //document.getElementById("loginForm").submit();
 }
+
+function checkFName(){
+    if (document.getElementById("firstname").value.length < 2){
+        errorString += "First Name must be at least two characters.  ";
+    }
+}
+
+function checkLName(){
+    if (document.getElementById("lastname").value.length < 2){
+        errorString += "Last Name must be at least two characters.  ";
+    }
+}
+
+function checkEmail(){
+    if (document.getElementById("email").value.length < 8){
+        errorString += "Email must be at least 8 characters.  ";
+    }
+}
+
+function checkPasswords(){
+    if (document.getElementById("password").value.length < 6){
+        errorString += "Passwords must be at least 6 characters.  "
+    }
+    if (document.getElementById("password").value != document.getElementById("confirmpassword").value){
+        errorString += "Passwords must match.  ";
+    }
+}
+
+function loadRegister(){
+    $("<div id='ErrorMessage'><p></p></div>").insertAfter("#registerForm");
+}
+
 function register(){
-    $("<div id='ErrorMessage'><p>hello world</p></div>").insertAfter("#registerForm");
-    document.getElementById("ErrorMessage").style.visibility = "hidden";
+    errorString = "";
+    checkFName();
+    checkLName();
+    checkEmail();
+    checkPasswords();
+    $("#ErrorMessage p").text(errorString);
+    if (errorString.length == 0){
+        let aUser = new User($("#firstname").val(),$("#lastname").val(),"",$("#email").val(),$("#password").val());
+        console.log("Name: " + aUser.fname + " " + aUser.lname);
+        console.log("Username: " + aUser.username);
+        console.log("Email: " + aUser.email);
+        console.log("Password: " + aUser.password);
+        //$("#registerForm").submit();
+        //$(":reset" "#registerForm").;
+    }
 }
 
 // CODE FROM LAB 1
